@@ -1,11 +1,15 @@
+/* @flow */
 /* eslint-disable */
 import React from 'react'
 import Helmet from 'react-helmet'
 import Nav from './Nav'
 import { StyleSheet, css } from 'aphrodite'
 
-class App extends React.Component {
-  render () {
+type Props = {
+  children?: React.Node
+}
+class App extends React.Component<Props> {
+  render (): React.Node {
     const { children } = this.props
     return (
       <div className={css(styles.root)}>
