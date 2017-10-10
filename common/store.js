@@ -1,13 +1,17 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import logger from 'redux-logger'
+import { createLogger } from 'redux-logger'
 import axios from 'axios'
 import createReducer from './createReducer'
+
+const logger = createLogger({
+  collapsed: true
+});
 
 export function configureStore (initialState) {
   let store = createStore(createReducer(), initialState, compose(
     applyMiddleware(
-      logger(), //remove on production
+      logger, //remove on production
       thunk.withExtraArgument({ axios })
     ),
 
