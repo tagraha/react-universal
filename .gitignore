@@ -33,7 +33,7 @@ node_modules
 .node_repl_history
 build
 assets.json
-./public/assets
+./public/assets/
 ./assets.json
 .nyc_output
 coverage
