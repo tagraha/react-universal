@@ -1,6 +1,18 @@
+/* @flow */
 import { LOAD_POSTS_REQUEST, LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE } from '../../constants'
 
-export function loadPosts () {
+type SuccessLoadPost = { type: LOAD_POSTS_SUCCESS, payload: object, meta: object }
+type FailLoadPost = { type: LOAD_POSTS_FAILURE, payload: object, error: boolean }
+
+type Action = SuccessLoadPost;
+
+type GetState = () => State;
+type PromiseAction = Promise<Action>;
+type ThunkAction = (dispatch: Dispatch, getState: GetState) => any;
+type Dispatch = (action: Action | ThunkAction | PromiseAction | Array<Action>) => any;
+
+
+export function loadPosts (): ThunkAction {
   return (dispatch, getState, { axios }) => {
     const { protocol, host } = getState().sourceRequest
     dispatch({ type: LOAD_POSTS_REQUEST })

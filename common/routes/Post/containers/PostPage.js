@@ -1,6 +1,7 @@
+/* @flow */
 /* eslint-disable */
 import { provideHooks } from 'redial'
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { loadPost } from '../actions'
@@ -15,8 +16,17 @@ const redial = {
 
 const mapStateToProps = state => selectCurrentPost(state)
 
-class PostPage extends React.Component {
-  render () {
+type Props = {
+  title: string,
+  content: string,
+  isLoading: bool,
+  error: bool
+}
+
+type State = {}
+
+class PostPage extends React.Component<Props, State> {
+  render (): React.Node {
     const { title, content, isLoading, error } = this.props
     if (!error) {
       return (

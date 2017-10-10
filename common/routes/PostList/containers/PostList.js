@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { provideHooks } from 'redial'
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import { loadPosts } from '../actions'
 import { connect } from 'react-redux'
@@ -17,8 +17,14 @@ const mapStateToProps = state => ({
   posts: selectPosts(state)
 })
 
-class PostListPage extends React.Component {
-  render () {
+type Props = {
+  posts: array
+}
+
+type State = {}
+
+class PostListPage extends React.Component<Props, State> {
+  render (): React.Node {
     const { posts } = this.props
     return (
       <div className={css(styles.root)}>
