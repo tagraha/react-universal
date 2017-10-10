@@ -1,10 +1,15 @@
+/* @flow */
 /* eslint-disable */
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'react-router'
 import { StyleSheet, css } from 'aphrodite'
 
-class PostListItem extends React.Component {
-  render () {
+type Props = {
+  post: object
+}
+
+class PostListItem extends React.Component<Props> {
+  render (): React.Node {
     const { post } = this.props
     return (
       <div className={css(styles.root)}>
