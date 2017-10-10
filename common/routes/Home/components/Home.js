@@ -1,13 +1,14 @@
+/* @flow */
 /* eslint-disable */
-import React from 'react'
+import * as React from 'react'
 
 import { StyleSheet, css } from 'aphrodite'
 import data from '../data'
 
 // This is a static page. It uses an array to hold data about the resources
 // and maintain DRY
-class Home extends React.Component {
-  render () {
+class Home extends React.Component<{}, {}> {
+  render (): React.Node {
     return (
       <div>
         <h2 className={css(styles.header)}>About</h2>
