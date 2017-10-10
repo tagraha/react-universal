@@ -1,6 +1,6 @@
 {
   "name": "universal-betot",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Betot Isomorphic React Starter with Redux, React Router, Redial, Aphrodite, Express, Webpack.",
   "scripts": {
     "test": "cross-env NODE_ENV=test ./node_modules/mocha/bin/mocha --compilers js:babel-core/register --recursive",
